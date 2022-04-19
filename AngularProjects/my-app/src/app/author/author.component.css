@@ -1,0 +1,16 @@
+
+.main{
+    padding-left: 60px;
+    padding-top: 10px;
+}
+
+h2{
+    padding-left: 30px;
+    font-weight: 700;
+    font-size: 23px;
+    background-color: rgb(151, 163, 173);
+    padding: 10px;
+}
+li{
+    font-size: 24px;
+}

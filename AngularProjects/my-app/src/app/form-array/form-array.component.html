@@ -1,0 +1,28 @@
+<h2>Exercice: Form-Array</h2>
+
+
+
+<div class="main">
+    <form>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+                id="password" 
+                type="text"
+                placeholder="Enter the password.." 
+                class="form-control"
+                (keyup.enter)="addTopic(topic)" #topic>
+
+                <ul class="list-group">
+                    <li  
+                        *ngFor="let topic of topics.controls"
+                        
+                        class="list-group-item">
+                        {{topic.value}}
+                    </li>
+                    <!-- (click)="removeTopic(topic)"  1 -->
+                    
+                </ul>
+        </div>
+    </form>
+</div>

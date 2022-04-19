@@ -1,0 +1,36 @@
+.main{
+    padding-left: 60px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+h2{
+    padding-left: 30px;
+    font-weight: 700;
+    font-size: 23px;
+    background-color: rgb(151, 163, 173);
+    padding: 10px;
+}
+
+
+.zippy{
+    border: 2px solid gray;
+    border-radius: 2px;
+    width: 250px;
+}
+
+.zippy-heading{
+    font-weight: 900;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.zippy-body{
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.expanded{
+    background-color: #c7abab;
+}

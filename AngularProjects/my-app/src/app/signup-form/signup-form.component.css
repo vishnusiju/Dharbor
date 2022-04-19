@@ -1,0 +1,25 @@
+
+
+
+.main{
+    padding-left: 360px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+h2{
+    padding-left: 30px;
+    font-weight: 700;
+    font-size: 23px;
+    background-color: rgb(151, 163, 173);
+    padding: 10px;
+}
+
+label{
+    font-size: 18px;
+}
+
+input {
+    width: 500px;
+    font-size: 14px;
+}

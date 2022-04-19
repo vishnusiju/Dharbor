@@ -1,0 +1,401 @@
+
+======================= ANGULAR ===================================
+-------------------------------------------------------------------
+
+> Angular is a framework for building client appications in html,css
+   and js/ts.
+>
+
+Benifits: 
+   > appication give clean structure.
+   > include a lot of re-usable code.
+   > make our application more testable.
+
+Steps to cteate angular project.
+	- install nodejs.
+	- install npm.
+	- npm i -g @angular/cli  // to install cli globally
+	- ng --version		 // to check the version
+	- ng new my-app		 //to creating new application
+	- ng serve		// to run the application
+
+
+
+> src
+	- main directory.
+	- working on it.
+-----------------------------------------------
+========================================================================
+> Angular Application Structure
+-------------------------------
+>testing-app
+   >e2e
+   >node_module
+   >src
+	>app
+	    - app.cpm
+	>assets
+	>environments
+	   - browserslist
+	   - index.html
+	   - karma.conf.js
+	   - main.ts
+	   - polyfills.ts
+	   - style.css
+	   - test.ts
+	   - tsconfig.app.json
+	   - tsconfig.spec.json
+	   - tslint.json
+	- .editconfig
+	- .gitignore
+	- angular.json
+	- package.json
+	- package-lock.json
+	- README.md
+	- teconfig.json
+	- tslint.json
+--------------- -------------- ----------------
+========================================================================
+> TypeScript,
+-------------
+> it is super set of js.
+> strong/ static typing  -  to define the datatype for a variable.
+> TS is OOP language and JS is scripting language.
+	- have the concepts of class, inteface, constructors,access modifier,
+	   fields, etc.
+> catch errors at compile-time errer.
+> great tooling.
+> simplifies js code.
+> make it easier to read and debug.
+> 
+
+4. Declaring variable
+---------------------
+
+> In two ways,
+	- var number = 1;
+	- let count = 1;
+> Ex: function doSomething(){
+	  for(var i=0; i<5; i++){
+		console.log(i);
+	  }
+	  console.log('Finally: '+i)
+       }
+	doSomething();
+
+> 5-types
+	1. let a: number;
+	2. let b: boolean;
+	3. let c: string;
+	4. let d: any;
+	5. let e: number[] = [1,2,3];    - array
+		: any[] = [1,true,'a',false];   - not a good  
+
+	- const ColorRed = 0;
+	- cosnt ColorGreen = 1;
+	- const ColorBlur = 2;
+
+
+	- enum Color { Red = 0, Green = 1, Blue = 2, Purple = 3};
+	    let backgroundColor = color.Red;
+
+
+> 6.Type Assertions,
+	1.> let message;
+	    message = 'abc';
+	    let endsWithC = (<string>message).endsWith('c');
+		OR
+	2.> let alternativeWay = (message as string).endsWith('c');
+
+> 7. Arrow Function,
+	> make the code clener and shorter.
+	> Ex: 
+		> with parameter
+		   - let doLog = (message) => console.log(message);
+		> without parameter
+		   - let doLog = () => console.log(message);
+	
+> 8. Interface,
+	- To define a shape of pointer object we use Interface.
+	>Ex: inteface Points {
+		x: number,
+		y: number
+	     }
+
+	     let drawPoint = (point: Points) => {
+		//...
+	     }
+
+	     drawPoint({
+		x: 1,
+		y: 2
+	     })
+
+> 9. Classes
+	>  
+> 10. Object,
+	> Ex: class Points{
+		x: number;
+		y: number;
+
+		drow(){
+		   console.log('x:' +this.x+ ', y:'+this.y);
+		}
+		getDistance(another: Points){
+		   // ...
+		}
+	      }
+	      // Object -  instance of a class.
+	      let point = new Points(){
+		point.x = 1;
+		point.x = 1;
+		point.drow();
+	      }
+
+> 11.Constructor,
+	> Ex: class Points{
+		x: number;
+		y: number;
+
+		constructor(x?: number,y?: number){
+		    this.x = x;
+	            this.y = y;
+		}
+
+		drow(){
+		   console.log('x:' +this.x+ ', y:'+this.y);
+		}
+		
+	      }
+	      // Object -  instance of a class.
+	      let point = new Points(1,3){
+		point.drow();
+	      }
+
+	- in TS there is no option of multiple constructors
+	- to solve this issue we use, 
+		- constructor(x?: number,y?: number){
+
+	- with out the values.
+		- let point = new Points(){
+
+12. Access Modifier.
+
+14. properties,
+
+	> class Points{
+		constructor(private x?: number, private y?: number){
+		
+		}
+		drow(){
+		console.log('X:'+this.x+',y:' +this.y);
+		}
+		get X(){
+			retrun this.x;
+		}
+	}
+
+	let point = new Points(1,2)
+	let x = point.getX();
+	point.drow();
+
+	- to access the private data from the scope we can use 
+	   define a method to fetch the data.
+		- get X(){
+			retrun this.x;
+			}
+
+		- let x = point.getX();
+	- to set the data
+	       	- set X(){
+			if(vaule < 0){
+				throw new Error('value cannot be less than 0');
+			this.x = value;
+			}
+		   }
+			
+		- let x = point.X;
+		  point.X = 10;
+		  point.drow();
+
+
+15. modules,
+
+	> import { point } from '@angular/core';
+	> import { point } from './point';
+	
+
+
+> Solution,
+	onClick(){
+		if(this.isSelected){
+			this.likeCount--;
+		}else{
+			this.likeCount++;
+		}
+		OR 
+		//this.likeCount += (this.isSelected) ? 1 : -1;
+		this.isSelected = !this.isSelected;
+	}
+
+========================================================================
+08/04/22
+--------
+> Templates,
+
+	1.> @Component({
+		selector: 'course',
+		template: '<h1>{{title}}</h1>'
+	   })
+
+	   export class CourseComponent{
+		title = "List of courses";
+	   }
+		-----------------------
+
+	 2.> @Component({
+		selector: 'course',
+		template: '<h1>{{ getTitle }}</h1>'
+	   })
+
+	   export class CourseComponent{
+		title = "List of courses";
+
+		getTitle(){
+			return this.title;
+		}
+	   }
+
+> Backticks ( `` ),
+
+	> the use of backtick allows for evaluating a string as port of a 
+	   general commands.
+	> brack-up the lines into multiple line that make more readable.
+
+
+> Directive,
+
+	> it is used to manipulate the dom elements,
+
+
+
+> *ngFor,
+----------
+components.ts
+----------------
+template: `
+    <h2>Employee List</h2>
+    <ul *ngFor="let employee of employees">
+      <li>{{employee.name}}</li>
+    </ul>
+  `,
+
+
+
+export class EmployeeComponent implements OnInit {
+
+  public employees = [
+    {"id": 1, "name": "Andrew", "age": 30},
+    {"id": 2, "name": "brandon", "age": 40},
+    {"id": 3, "name": "christ", "age": 10},
+    {"id": 4, "name": "elena", "age": 20}
+  ];
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+========================================================================
+
+===================================================================
+-------------- Errors ---------------------------------------------
+========================================================================
+1. node : The term 'node' is not recognized as the name of a cmdlet, function, script file, 
+   or operable program. Check the spelling of the name, or if a path was included, verify that 
+   the path is correct and try again.
+
+> To solve this error,
+	- open environment variable,
+	- click on path -> edit
+	- add node path [ C:\Program Files\nodejs ] in both fields. then click ok.
+
+2.ng : File C:\Users\vsiju\AppData\Roaming\npm\ng.ps1 cannot be loaded because
+  running scripts is disabled on this system. For more 
+  information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+
+> To solve this error,
+	- delete the ng.ps1 file. 
+
+------------------------- 11/04/22 ----------------------------------------------------
+1.> Can't bind to 'ngModel' since it isn't a known property of 'input'.
+
+    <input type="text" [(ngModel)]="title">
+
+ANS> import FormsModule on app.module.ts -import { FormsModule } from "@angular/forms"
+
+=========================================================================------- 

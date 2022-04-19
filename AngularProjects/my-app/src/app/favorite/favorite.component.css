@@ -1,0 +1,19 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+h2{
+    padding-left: 30px;
+    font-weight: 700;
+    font-size: 23px;
+    background-color: rgb(151, 163, 173);
+    padding: 10px;
+}
+.glyphicon {
+    margin: 30px;
+    padding-left: 40px;
+    font-size: 90px;
+    color: rgb(32, 238, 32);
+}
+
+.glyphicon-star-empty{
+    color: green;
+}

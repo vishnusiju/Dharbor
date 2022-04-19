@@ -1,0 +1,53 @@
+
+
+.main{
+    padding-left: 60px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+h2{
+    padding-left: 30px;
+    font-weight: 700;
+    font-size: 23px;
+    background-color: rgb(151, 163, 173);
+    padding: 10px;
+}
+
+.formClass{
+    /* background-color: rgb(199, 230, 230); */
+    background-color: #4CAF50;
+    width: 600px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-group{
+    margin: 15px;
+    padding: 5px;
+}
+
+label{
+    font-weight: 700;
+    font-size: 18px;
+    
+}
+
+textarea, input{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+button{
+    margin-left: 30px;
+    margin-bottom: 20px;
+    
+}
+.btn{
+    padding: 5px 10px;
+    font-size: 13px;
+}
+
+.form-control.ng-touched.ng-invalid{
+    border: 2px solid red ;
+}
